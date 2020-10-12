@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DevBytesClone</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="supporting_text" />
+    <string name="title">Material Card View Title</string>
+    <string name="secondary_text">Material Card View Secondary Text</string>
 </resources>

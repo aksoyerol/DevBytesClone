@@ -7,4 +7,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight.Bridge">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:navigationBarColor">#efefef</item>
+        <item name="buttonBarStyle">@color/colorAccent</item>
+        <item name="buttonStyle">@color/colorAccent</item>
+    </style>
+
+<!--    <style name="Theme.App" parent="Theme.MaterialComponents.*">-->
+<!--        ...-->
+<!--        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>-->
+<!--    </style>-->
+
+<!--    <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">-->
+<!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Card</item>-->
+<!--        <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>-->
+<!--    </style>-->
+
+<!--    <style name="ThemeOverlay.App.Card" parent="">-->
+<!--        <item name="colorPrimary">@color/shrine_pink_100</item>-->
+<!--        <item name="colorSurface">@color/shrine_pink_light</item>-->
+<!--        <item name="colorOnSurface">@color/shrine_pink_900</item>-->
+<!--    </style>-->
+
+
 </resources>
