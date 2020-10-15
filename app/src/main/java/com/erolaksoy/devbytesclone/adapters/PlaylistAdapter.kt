@@ -14,7 +14,7 @@ class PlaylistAdapter() :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): PlaylistAdapter.MyViewHolder {
+    ): MyViewHolder {
         return MyViewHolder(ItemPlaylistRecyclerBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
@@ -23,8 +23,6 @@ class PlaylistAdapter() :
         holder.bind(item)
 
     }
-
-
     class MyViewHolder(private val binding: ItemPlaylistRecyclerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
