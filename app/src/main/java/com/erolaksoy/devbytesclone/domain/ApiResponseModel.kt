@@ -1,5 +1,6 @@
 package com.erolaksoy.devbytesclone.domain
 
+import com.erolaksoy.devbytesclone.database.DevBytesDatabaseModel
 import com.google.gson.annotations.SerializedName
 import com.squareup.moshi.JsonClass
 
@@ -24,6 +25,18 @@ fun ApiResponseModel.asDevByteList(): List<DevByteModel> {
             url = it.url,
             updated = it.updated,
             thumbnail = it.thumbnail
+        )
+    }
+}
+
+fun ApiResponseModel.asDatabaseList(): List<DevBytesDatabaseModel> {
+    return videos.map {
+        DevBytesDatabaseModel(
+            description = it.description,
+            thumbnail = it.thumbnail,
+            updated = it.updated,
+            url = it.url,
+            title = it.title
         )
     }
 }

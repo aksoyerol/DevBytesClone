@@ -1,7 +1,6 @@
 package com.erolaksoy.devbytesclone.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -9,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.erolaksoy.devbytesclone.databinding.ItemPlaylistRecyclerBinding
 import com.erolaksoy.devbytesclone.domain.DevByteModel
 
-class PlaylistAdapter() :
+class PlaylistAdapter(private val clickListener: OnClickListener) :
     ListAdapter<DevByteModel, PlaylistAdapter.MyViewHolder>(DiffUtilCallback()) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -20,18 +19,22 @@ class PlaylistAdapter() :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = getItem(position)
+        holder.itemView.setOnClickListener {
+            clickListener.onClick(item)
+        }
         holder.bind(item)
 
     }
+
     class MyViewHolder(private val binding: ItemPlaylistRecyclerBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(devByte : DevByteModel) {
+
+        fun bind(devByte: DevByteModel) {
             binding.devbytemodel = devByte
             binding.executePendingBindings()
         }
     }
-
 }
 
 class DiffUtilCallback : DiffUtil.ItemCallback<DevByteModel>() {
@@ -44,3 +47,6 @@ class DiffUtilCallback : DiffUtil.ItemCallback<DevByteModel>() {
     }
 }
 
+class OnClickListener(val clickListener: (devByteModel: DevByteModel) -> Unit) {
+    fun onClick(devByteModel: DevByteModel) = clickListener(devByteModel)
+}
